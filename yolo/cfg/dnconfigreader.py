@@ -1,6 +1,8 @@
 import configparser
 from typing import Dict, Tuple, List, NewType
-from typing import Mapping, Sequence
+from typing import Mapping, Sequence, NoReturn
+import copy
+import yolo.helpers.transforms as tfx
 
 class DarkNetConfigReader:
     
@@ -8,6 +10,7 @@ class DarkNetConfigReader:
         self.layers = []
         self.net = []
         self.raw_config_list = None
+
     def parse_raw(self, cfg_file : str) -> None:
         with open(cfg_file) as f:
             contents = f.read().strip()
@@ -36,11 +39,10 @@ class DarkNetConfigReader:
             
 
     # ret_lists :: [Dict]
-    def ret_lists(self) -> List[Dict]:
+    def ret_list(self) -> List[Dict]:
         return self.config_dict_list
 
-    
-    
+
 if __name__ == "__main__":
 
     cfg_file = "./yolo/cfg/yolov3.cfg"
