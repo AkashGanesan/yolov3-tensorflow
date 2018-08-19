@@ -42,8 +42,8 @@ class DarkNetConfigReader:
     
     
 if __name__ == "__main__":
-    
-    cfg_file = "./yolov3.cfg"
+
+    cfg_file = "./yolo/cfg/yolov3.cfg"
     config = DarkNetConfigReader()
     config.parse_raw(cfg_file)
     config.to_dicts()
