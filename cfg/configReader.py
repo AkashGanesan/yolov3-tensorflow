@@ -1,14 +1,14 @@
 import configparser
-import copy
+from typing import Dict, Tuple, List, NewType
+from typing import Mapping, Sequence
 
 class DarkNetConfigReader:
     
-
     def __init__(self):
         self.layers = []
         self.net = []
         self.raw_config_list = None
-    def parse_raw(self, cfg_file):
+    def parse_raw(self, cfg_file : str) -> None:
         with open(cfg_file) as f:
             contents = f.read().strip()
             # Not as bad as it seems.
@@ -31,12 +31,15 @@ class DarkNetConfigReader:
             temp = copy.deepcopy(attributes)
             temp.update({"name" : name})
             self.config_dict_list.append(temp)
-                
+
+
+            
 
     # ret_lists :: [Dict]
-    def ret_lists(self) -> list:
+    def ret_lists(self) -> List[Dict]:
         return self.config_dict_list
 
+    
     
 if __name__ == "__main__":
     
