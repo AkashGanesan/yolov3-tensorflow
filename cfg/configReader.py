@@ -40,7 +40,7 @@ class DarkNetConfigReader:
     
 if __name__ == "__main__":
     
-    cfg_file = "/home/akash/learn/dl/yolov3-tensorflow/cfg/yolov3.cfg"
+    cfg_file = "./yolov3.cfg"
     config = DarkNetConfigReader()
     config.parse_raw(cfg_file)
     config.to_dicts()
