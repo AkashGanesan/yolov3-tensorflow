@@ -2,7 +2,7 @@ import configparser
 from typing import Dict, Tuple, List, NewType
 from typing import Mapping, Sequence, NoReturn
 import copy
-import yolo.helpers.transforms as tfx
+from yolo.helpers.transforms import DarkNetTransformer
 
 class DarkNetConfigReader:
     
@@ -34,7 +34,7 @@ class DarkNetConfigReader:
             temp = copy.deepcopy(attributes)
             temp.update({"name" : name})
             self.config_dict_list.append(temp)
-
+        DarkNetTransformer.transform(self.config_dict_list)
 
             
 
