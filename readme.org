@@ -1,0 +1,12 @@
+* YOLOv3-Tensorflow
+
+  This is an implementation of YOLOv3
+  (https://github.com/pjreddie/darknet) in tensorflow.
+
+** Prerequisites 
+
+   - python3.7 (used type annotations)
+
+     
+     
+     
